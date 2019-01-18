@@ -4,14 +4,23 @@
 #include "hashtable.h"
 #include "ex2.h"
 
+
+// void hash_table_insert(HashTable *ht, char *key, char *value);
+// void hash_table_remove(HashTable *ht, char *key);
+// char *hash_table_retrieve(HashTable *ht, char *key);
+// void destroy_hash_table(HashTable *ht);
+// HashTable *hash_table_resize(HashTable *ht);
+
 char **reconstruct_trip(Ticket **tickets, int length)
 {
   HashTable *ht = create_hash_table(16);
   char **route = malloc(length * sizeof(char *));
 
-  // YOUR CODE HERE
-
-  return route;
+  for (int = 0; i< length; i++){
+    printf("Ticket **tickets = {\n" "Ticket { source: '%s', destination: '%s' },\n", tickets[i]->source, tickets[i]->destination);
+    hash_table_insert(hash, tickets[i]->source, tickets[i]->destination);
+  }
+   return route;
 }
 
 void print_route(char **route, int length)
