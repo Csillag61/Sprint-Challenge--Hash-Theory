@@ -18,8 +18,9 @@ char **reconstruct_trip(Ticket **tickets, int length)
 
   for (int i = 0; i< length; i++){
     printf("Ticket **tickets = {\n" "Ticket { source: '%s', destination: '%s' },\n", tickets[i]->source, tickets[i]->destination);
-    hash_table_insert(ht, tickets[i]->source, tickets[i]->destination);
     printf(" '%s' , '%s' , ", tickets[i]->source, tickets[i]->destination);
+    hash_table_insert(ht, tickets[i]->source, tickets[i]->destination);
+    
   }
   route[0] = hash_table_retrieve(ht, "NONE");
   for(int i =1; i<length; i++){
