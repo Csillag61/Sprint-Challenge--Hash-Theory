@@ -18,9 +18,11 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
   
   for (int i=0; i< length; i++){
     int find = hash_table_retrieve(ht, weights[i]);
+    
     if (find !=-1) {
       answer->index_1 =i;
       answer->index_2 = find;
+      printf("Answer{ index_1: %d, index_2: %d}\n" , answer->index_1, answer->index_2);
       destroy_hash_table(ht);
       return answer;
     } else {
