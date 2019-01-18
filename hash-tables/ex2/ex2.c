@@ -24,8 +24,9 @@ char **reconstruct_trip(Ticket **tickets, int length)
   for(int i =1; i<length; i++){
     route[i] = hash_table_retrieve(hash, route[i-1]);
   }
-}
-   return route;
+
+  destroy_hash_table(hash);
+  return route;
 }
 
 void print_route(char **route, int length)
