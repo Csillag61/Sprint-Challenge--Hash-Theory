@@ -16,16 +16,17 @@ char **reconstruct_trip(Ticket **tickets, int length)
   HashTable *ht = create_hash_table(16);
   char **route = malloc(length * sizeof(char *));
 
-  for (int = 0; i< length; i++){
+  for (int i = 0; i< length; i++){
     printf("Ticket **tickets = {\n" "Ticket { source: '%s', destination: '%s' },\n", tickets[i]->source, tickets[i]->destination);
-    hash_table_insert(hash, tickets[i]->source, tickets[i]->destination);
+    hash_table_insert(ht, tickets[i]->source, tickets[i]->destination);
+    printf(" '%s' , '%s' , ", tickets[i]->source, tickets[i]->destination);
   }
-  route[0] = hash_table_retrieve(hash, "NONE");
+  route[0] = hash_table_retrieve(ht, "NONE");
   for(int i =1; i<length; i++){
-    route[i] = hash_table_retrieve(hash, route[i-1]);
+    route[i] = hash_table_retrieve(ht, route[i-1]);
   }
 
-  destroy_hash_table(hash);
+  destroy_hash_table(ht);
   return route;
 }
 
