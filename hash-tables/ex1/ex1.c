@@ -3,14 +3,27 @@
 #include "hashtable.h"
 #include "ex1.h"
 
+//hash_table_retrieve
+//destroy_hash_table
+//hash_table_insert
+
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
+  Answer *answer = malloc(sizeof(Answer));
+  
+  if (length < 2) {
+    return NULL;
+  }
+  
+  
 
-  // YOUR CODE HERE
-
-  return NULL;
+      hash_table_insert(ht, limit-weights[i], i);
+  }
 }
+return NULL;
+}
+
 
 void print_answer(Answer *answer)
 {
